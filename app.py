@@ -65,6 +65,11 @@ def chunk_text(text, max_tokens=16000):
     if current_chunk:
         chunks.append(' '.join(current_chunk))
 
+    logger.info("========= Transcript Summary ========")
+    logger.info(f"words = {len(words)}")
+    logger.info(f"chunks = {len(chunks)}")
+    logger.info("========= End ========")
+    
     return chunks
 
 async def process_chunk(chunk):
